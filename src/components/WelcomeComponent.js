@@ -12,13 +12,9 @@ function WelcomeView() {
   return (
     <View style={{}}>
       <View>
-        <Text style={styles.welcomeTxt(theme.colors.black, 70)}>
-          Find The Most
-        </Text>
+        <Text style={styles.welcomeTxt(theme.colors.black, 70)}>Find The Most</Text>
 
-        <Text style={styles.welcomeTxt(theme.colors.primary, 0)}>
-          Luxurious Furniture
-        </Text>
+        <Text style={styles.welcomeTxt(theme.colors.primary, 0)}>Luxurious Furniture</Text>
       </View>
       <View style={styles.searchContainer}>
         <TouchableOpacity
@@ -36,10 +32,10 @@ function WelcomeView() {
           />
         </View>
         <View style={styles.searchBtn}>
-          <Ionicons
-            name="camera-outline"
-            size={36}
-            color={theme.colors.offWhite}
+          <Ionicons 
+          name="camera-outline" 
+          size={36}
+          color={theme.colors.offWhite}
           />
         </View>
       </View>
@@ -48,21 +44,22 @@ function WelcomeView() {
 }
 
 const styles = StyleSheet.create({
-  searchWrapper: {
-    flex: 1,
+  searchWrapper:{
+    flex:1,
     backgroundColor: theme.colors.secondary,
-    borderRadius: theme.sizes.small,
-    marginRight: theme.sizes.small,
+    borderRadius:theme.sizes.small,
+    marginRight:theme.sizes.small,
+
   },
-  searchBtn: {
-    width: 50,
+  searchBtn:{
+    width:50,
     backgroundColor: theme.colors.primary,
-    justifyContent: "center",
+    justifyContent:"center",
     alignItems: "center",
-    borderRadius: theme.sizes.medium,
+    borderRadius:theme.sizes.medium
   },
   welcomeTxt: (color, top) => ({
-    fontSize: theme.sizes.xxlarge - 6,
+    fontSize: theme.sizes.xxlarge-6,
     color: color,
     marginTop: top,
     marginHorizontal: theme.sizes.small,
@@ -71,7 +68,7 @@ const styles = StyleSheet.create({
   searchIcon: {
     marginTop: theme.sizes.small,
     color: theme.colors.gray,
-    marginHorizontal: theme.sizes.xSmall,
+    marginHorizontal:theme.sizes.xSmall
   },
   searchContainer: {
     flexDirection: "row",
@@ -80,12 +77,12 @@ const styles = StyleSheet.create({
     marginHorizontal: theme.sizes.small,
     backgroundColor: theme.colors.secondary,
     borderRadius: theme.sizes.medium,
-    marginVertical: theme.sizes.medium,
+    marginVertical:theme.sizes.medium,
   },
   searchInput: {
     width: "100%",
-    height: "100%",
-    paddingHorizontal: theme.sizes.small,
+    height:"100%",
+    paddingHorizontal:theme.sizes.small
   },
 });
 
