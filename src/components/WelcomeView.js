@@ -6,14 +6,19 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import { theme } from "../constants/theme";
 
 function WelcomeView() {
   return (
     <View style={{}}>
       <View>
-        <Text style={styles.welcomeTxt("#000", 70)}>Find The Most</Text>
+        <Text style={styles.welcomeTxt(theme.colors.black, 70)}>
+          Find The Most
+        </Text>
 
-        <Text style={styles.welcomeTxt("#2A4D50", 0)}>Luxurious Furniture</Text>
+        <Text style={styles.welcomeTxt(theme.colors.primary, 0)}>
+          Luxurious Furniture
+        </Text>
       </View>
       <View style={styles.searchContainer}>
         <TouchableOpacity
@@ -24,36 +29,63 @@ function WelcomeView() {
           <Feather name="search" size={24} style={styles.searchIcon} />
         </TouchableOpacity>
 
-        <TextInput
-          placeholder="What are you looking for"
-          style={styles.searchInput}
-        />
+        <View style={styles.searchWrapper}>
+          <TextInput
+            placeholder="What are you looking for"
+            style={styles.searchInput}
+          />
+        </View>
+        <View style={styles.searchBtn}>
+          <Ionicons
+            name="camera-outline"
+            size={36}
+            color={theme.colors.offWhite}
+          />
+        </View>
       </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  searchWrapper: {
+    flex: 1,
+    backgroundColor: theme.colors.secondary,
+    borderRadius: theme.sizes.small,
+    marginRight: theme.sizes.small,
+  },
+  searchBtn: {
+    width: 50,
+    backgroundColor: theme.colors.primary,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: theme.sizes.medium,
+  },
   welcomeTxt: (color, top) => ({
-    fontSize: 38,
+    fontSize: theme.sizes.xxlarge - 6,
     color: color,
     marginTop: top,
-    marginHorizontal: 12,
+    marginHorizontal: theme.sizes.small,
   }),
 
   searchIcon: {
-    marginTop: 12,
-    color: "#83829A",
-    marginLeft: 10,
+    marginTop: theme.sizes.small,
+    color: theme.colors.gray,
+    marginHorizontal: theme.sizes.xSmall,
   },
   searchContainer: {
     flexDirection: "row",
     justifyContent: "center",
     height: 50,
-    marginHorizontal: 16,
+    marginHorizontal: theme.sizes.small,
+    backgroundColor: theme.colors.secondary,
+    borderRadius: theme.sizes.medium,
+    marginVertical: theme.sizes.medium,
   },
   searchInput: {
     width: "100%",
+    height: "100%",
+    paddingHorizontal: theme.sizes.small,
   },
 });
 
