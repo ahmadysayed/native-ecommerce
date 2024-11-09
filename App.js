@@ -4,13 +4,9 @@ import WelcomeView from "./src/components/WelcomeView";
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={styles.topBox}>
-        <Text style={{ fontSize: 20 }}>Hello</Text>
-        <Text style={{ fontSize: 22 }}>Let's program in</Text>
-        <Text style={{ fontSize: 25 }}>React Native</Text>
-      </View>
       <WelcomeView />
-      <View style={styles.bottomBox}>
+
+      <View style={styles.box}>
         <Text style={{ fontSize: 20 }}>Hello</Text>
         <Text style={{ fontSize: 22 }}>Let's program in</Text>
         <Text style={{ fontSize: 25 }}>React Native</Text>
@@ -24,23 +20,18 @@ const styles = StyleSheet.create({
     flexDirection: "column",
     flex: 1,
     alignItems: "center",
-    justifyContent: "center",
+
     backgroundColor: "#bbb",
   },
 
-  topBox: {
-    alignItems: "center",
-    justifyContent: "center",
-    flexDirection: "colum",
-    flex: 0.3,
-    backgroundColor: "#ccc",
-  },
-
-  bottomBox: {
+  box: {
     flexDirection: "column",
-    flex: 0.3,
+
     backgroundColor: "#ddd",
     justifyContent: "center",
     alignItems: "center",
+    borderRadius: 10,
+    marginTop: 10,
+    padding: 40,
   },
 });
