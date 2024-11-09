@@ -1,23 +1,15 @@
 import { Text, View, StyleSheet } from "react-native";
-
-function WelcomeView() {
-  return (
-    <View>
-      <Text>Welcome to our App building courses</Text>
-    </View>
-  );
-}
+import WelcomeView from "./src/components/WelcomeView";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <WelcomeView />
       <View style={styles.topBox}>
         <Text style={{ fontSize: 20 }}>Hello</Text>
         <Text style={{ fontSize: 22 }}>Let's program in</Text>
         <Text style={{ fontSize: 25 }}>React Native</Text>
       </View>
-
+      <WelcomeView />
       <View style={styles.bottomBox}>
         <Text style={{ fontSize: 20 }}>Hello</Text>
         <Text style={{ fontSize: 22 }}>Let's program in</Text>
