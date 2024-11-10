@@ -1,12 +1,5 @@
-import { SafeAreaView } from "react-native";
-import WelcomeComponent from "./src/components/WelcomeComponent";
-import HomeCarouselComponent from "./src/components/HomeCarouselComponent";
+import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
-  return (
-    <SafeAreaView>
-      <WelcomeComponent />
-      <HomeCarouselComponent />
-    </SafeAreaView>
-  );
+  return <HomeScreen />;
 }

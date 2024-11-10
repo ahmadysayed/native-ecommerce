@@ -1,5 +1,22 @@
-import { Text, Image, View, FlatList } from "react-native";
+import { Text, Image, View, FlatList, Dimensions } from "react-native";
 import { theme } from "../constants/theme";
+
+const { width } = Dimensions.get("window");
+
+const images = [
+  {
+    id: "1A",
+    path: require("../../assets/images/fn3.jpg"),
+  },
+  {
+    id: "1B",
+    path: require("../../assets/images/fn2.jpg"),
+  },
+  {
+    id: "1C",
+    path: require("../../assets/images/fn1.jpg"),
+  },
+];
 
 const data = [
   { id: "1", title: "Item 1" },
@@ -23,16 +40,20 @@ const HomeCarouselComponent = () => {
           alignItems: "center",
         }}
       >
-        <Image
-          style={{ resizeMode: "cover", width: "100%", height: "100%" }}
-          source={require("../../assets/images/fn1.jpg")}
-        />
-      </View>
-      <View>
         <FlatList
-          data={data}
-          renderItem={({ item }) => <Text>{item.title}</Text>}
+          data={images}
+          renderItem={({ item }) => (
+            <Image
+              style={{ resizeMethod: "cover", width: width, height: "100%" }}
+              source={item.path}
+            />
+          )}
           keyExtractor={(item) => item.id}
+          horizontal
+          pagingEnabled
+          showsHorizontalScrollIndicator={false}
+          snapToAlignment="center"
+          decelerationRate="fast"
         />
       </View>
     </View>
